@@ -1,9 +1,9 @@
 // This function stores our state.
 
-const initialState = { soil: 0, light: 0, water: 0 };
+//const initialState = { soil: 0, light: 0, water: 0 };
 
 const storeState = () => {
-  let currentState = initialState;
+  let currentState = { soil: 0, light: 0, water: 0 };
   return (stateChangeFunction = state => state) => {
     const newState = stateChangeFunction(currentState);
     currentState = {...newState};
@@ -31,3 +31,6 @@ export const blueFood = changeState("soil")(5);
 
 export const hydrate = changeState("water")(1);
 export const superWater = changeState("water")(5);
+
+export const light = changeState("light")(1);
+export const wonderfulLight = changeState("light")(5);
